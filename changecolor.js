@@ -1,20 +1,22 @@
 const body = document.querySelector('body')
 const button = document.querySelector('button')
 const p = document.querySelector('p')
+h = document.querySelector('h3')
 
-const colors=['red', 'purple', 'blue', 'green', 'white', 'yellow', 'pink']
+const index=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
 
 body.style.background="red";
 
 const changeColor = () =>{
-    const colorIndex = parseInt(Math.random()* colors.length)
+    let heh = '#'
 
-    body.style.background = colors[colorIndex]
-
-    if(colorIndex===4){
-        p.style.color="black"
+    for(i = 0; i< 6; i++){
+    var colorIndex =Math.floor((Math.random()* index.length));
+    heh += index[colorIndex]
     }
 
+    body.style.background = heh
+    h.innerHTML = `<h1> Fon: ${heh} </h1>`
 }
 
 button.addEventListener('click', changeColor)
